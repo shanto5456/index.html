@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise ❤️</title>
+    <style>
+        body {
+            background-color: #1a0b16;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: rgba(30, 10, 25, 0.9);
+            padding: 30px;
+            border-radius: 25px;
+            border: 2px solid #ff1e56;
+            box-shadow: 0 0 30px rgba(255, 30, 86, 0.4);
+            position: relative;
+            z-index: 10;
+        }
+
+        .hidden { display: none; }
+        h1 { color: #ff1e56; font-size: 24px; margin-bottom: 10px; }
+        p { color: #ffb3c6; font-size: 15px; }
+
+        button {
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .yes-btn { background-color: #ff1e56; color: white; }
+        .no-btn { background-color: #444; color: white; position: relative; }
+        .quiz-btn { background: #331a2e; color: #ffb3c6; border: 1px solid #ff1e56; width: 100%; margin-bottom: 10px; }
+        .back-btn { background: none; color: #ff1e56; text-decoration: underline; font-size: 12px; border:none; cursor:pointer;}
+
+        /* Photo Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-card {
+            background: white;
+            padding: 5px;
+            padding-bottom: 20px;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .gallery-card:nth-child(even) { transform: rotate(2deg); }
+
+        .gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-text { color: #333; font-family: 'Cursive', sans-serif; font-size: 12px; margin-top: 5px; }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            color: #ff1e56;
+            font-size: 20px;
+            animation: move 4s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heart-container"></div>
+
+    <div class="container">
+        
+        <div id="step1">
+            <img src="photo_2026-04-11_10-34-36.jpg" width="120" alt="Sticker Here">
+            <h1>i love you pakhi....! will you marry me ? 🥺</h1>
+            <p>i am say this to the most precious person in my life.are you Ready for your surprise?</p>
+            <div style="display: flex; justify-content: center;">
+                <button class="yes-btn" onclick="nextStep(2)">YES</button>
+                <button class="no-btn" id="noBtn" onmouseover="moveNo()">NO</button>
+            </div>
+        </div>
+
+        <div id="step2" class="hidden">
+            <h1>👑❤️
+🎂</h1>
+            <p>it is for you my love 😜?</p>
+            <button class="quiz-btn" onclick="nextStep(3)">i love you ❤️</button>
+            <button class="quiz-btn" onclick="nextStep(3)">i love you forever ❤️</button>
+            <button class="quiz-btn" onclick="nextStep(3)">i love you forever and ever ❤️</button>
+            <br><button class="back-btn" onclick="nextStep(1)">← Back</button>
+        </div><div id="step3" class="hidden">
+            <h1>tmi ki amr sate mile amr ai sopno gulo puron korba...? 🥳</h1>
+            <div style="display:flex; justify-content: space-around; margin-top: 20px;">
+                <div onclick="nextStep(4)" style="cursor:pointer; background: #331a2e; padding: 15px; border-radius: 15px;">💌<br><small>Letter</small></div>
+                <div onclick="nextStep(5)" style="cursor:pointer; background: #331a2e; padding: 15px; border-radius: 15px;">📸<br><small>Gallery</small></div>
+                <div onclick="nextStep(6)" style="cursor:pointer; background: #331a2e; padding: 15px; border-radius: 15px;">🎥<br><small>Video</small></div>
+            </div>
+            <p style="margin-top: 30px; font-style: italic;">"Yay! You passed the quiz! 🎉"</p>
+        </div>
+
+        <div id="step4" class="hidden">
+            <h1>💌</h1>
+            <div style="text-align: left; background: #2d1426; padding: 15px; border-radius: 10px; font-size: 14px; line-height: 1.6; border-left: 3px solid #ff1e56;">
+                 !<br>Finally aj sob seriously boltici asa kori tmi answer ta seriously diba<br>
+                "Tumi amar jibone ashar por theke shobkuchu kemon jani bodle gese. Ami nijeke aro bhalo bhabe chinte shikhechi. Ami baki jibontao tomar pashei thakte chai.Sotti bolte       Amar din-er shobcheye valo somoy tuku hoy jokhon ami tomar sathe thaki and tmr sate kotha boli ami tomake ank bhalobashi. Sudhu bondhu hoye thaka amar pokkhe sombhob na.tai tomake boltici i love you tmi ki amar hoba . Will you be mine?" 
+
+❤️👀🦋✨🥀 ... <br>
+                May all time bring you endless happiness.
+            </div>
+            <button class="back-btn" onclick="nextStep(3)" style="margin-top: 20px;">← Back to Menu</button>
+        </div>
+
+        <div id="step5" class="hidden">
+            <h1>my future plans with you ❤️</h1>
+            <div class="gallery">
+                <div class="gallery-card"><img src="photo_1.jpg"><div class="gallery-text">1 st propose you</div></div>
+                <div class="gallery-card"><img src="photo_2.jpg"><div class="gallery-text">2 nd love you forever</div></div>
+                <div class="gallery-card"><img src="photo_3.jpg"><div class="gallery-text">3 rd i am always take care you</div></div>
+                <div class="gallery-card"><img src="photo_4.jpg"><div class="gallery-text">4 th marry you </div></div>
+                <div class="gallery-card"><img src="photo_5.jpg"><div class="gallery-text">5 th stay together </div></div>
+                <div class="gallery-card"><img src="photo_6.jpg"><div class="gallery-text">6 th at last finaly complete our little family 🥰</div></div>
+            </div>
+            <button class="back-btn" onclick="nextStep(3)" style="margin-top:20px;">← Back to Menu</button>
+        </div>
+
+        <div id="step6" class="hidden">
+            <h1>Special Video 🎥</h1>
+            <div style="margin-top: 20px;">
+                <video width="100%" controls style="border-radius: 15px; border: 2px solid #ff1e56;">
+                    <source src="video_00001.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <button class="back-btn" onclick="nextStep(3)" style="margin-top: 20px;">← Back to Menu</button>
+        </div>
+
+    </div>
+
+    <script>
+        // Navigation Logic
+        function nextStep(step) {
+            document.querySelectorAll('.container > div').forEach(div => div.classList.add('hidden'));
+            document.getElementById('step' + step).classList.remove('hidden');
+        }
+
+        // NO Button Runaway Logic
+        function moveNo() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        // Heart Rain Animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.getElementById('heart-container').appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
